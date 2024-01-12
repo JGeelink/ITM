@@ -49,7 +49,7 @@ pipeline {
     }
 
     options {
-        // Hier stel je pipeline-opties in, bijvoorbeeld:
+        // Hier stel je pipeline-opties in, bijvoorbeeldf:
         // skipDefaultCheckout() // overslaan van standaard code-checkout
     }
 
