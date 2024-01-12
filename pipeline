@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    environment {
+        // Voeg hier omgevingsvariabelen toe indien nodig
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Hier wordt de broncode uit het versiebeheersysteem (bijvoorbeeld Git) gecontroleerd
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Voeg hier stappen toe om je code te bouwen (niet nodig voor een eenvoudig 'Hello World'-voorbeeld)
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Voeg hier stappen toe om je code te testen (niet nodig voor een eenvoudig 'Hello World'-voorbeeld)
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Voeg hier stappen toe om je code te implementeren/deployen (niet nodig voor een eenvoudig 'Hello World'-voorbeeld)
+            }
+        }
+
+        stage('Hello World') {
+            steps {
+                // Eenvoudige Hello World-taak
+                echo 'Hello World!'
+            }
+        }
+    }
+
+    post {
+        success {
+            // Voeg hier stappen toe die moeten worden uitgevoerd als de pipeline succesvol is
+        }
+        failure {
+            // Voeg hier stappen toe die moeten worden uitgevoerd als de pipeline mislukt
+        }
+    }
+
+    options {
+        // Hier stel je pipeline-opties in, bijvoorbeeld:
+        // skipDefaultCheckout() // overslaan van standaard code-checkout
+    }
+
+    triggers {
+        // Hier kun je triggers instellen voor automatische uitvoering van de pipeline
+        // Bijvoorbeeld: cron('H/15 * * * *') // Voert de pipeline elke 15 minuten uit
+    }
+}
